@@ -1,0 +1,19 @@
+package br.com.bytebank.banco.modelo;
+
+public class GuardadoDeContas {
+
+	private Conta[] referencias;
+	
+	public GuardadoDeContas(){
+		
+		this.referencias = new Conta[10];
+		
+	}
+	
+	public void adiciona(Conta ref){
+		
+		this.referencias[0] = ref;
+		
+	}	
+
+}
