@@ -10,10 +10,10 @@ public abstract class Conta {
 	 protected double saldo;		      // private proibe que outras classes possam mexer e ler ela, apenas esta classe pode mexer nela
 	 private int agencia;                    // atributos
 	 private int numero;               // o atributo pode ser imutavel, ter um valor constante
-	 private Cliente titular; //= new Cliente();  // a cada instanciacao é criado um titular   
-	 private static int total;        // static deixa o atributo da classe e não exclusiva da conta e não da pra usar "this." 
+	 private Cliente titular; //= new Cliente();  // a cada instanciacao ï¿½ criado um titular   
+	 private static int total;        // static deixa o atributo da classe e nï¿½o exclusiva da conta e nï¿½o da pra usar "this." 
 	 
-//	 public Conta() {    //depois que tiver um metodo contrutor o metodo sem parametros não é criado pelo java
+//	 public Conta() {    //depois que tiver um metodo contrutor o metodo sem parametros nï¿½o ï¿½ criado pelo java
 //		 
 //	 }
 	 /**
@@ -22,9 +22,9 @@ public abstract class Conta {
 	  * @param numero
 	  */
 	 
-	 public Conta(int agencia, int numero) {                    //construtor padrao se não colocar o java faz para vc	 
+	 public Conta(int agencia, int numero) {                    //construtor padrao se nï¿½o colocar o java faz para vc	 
 		 Conta.total++;
-		 //System.out.println("o total de contas é " + Conta.total);
+		 //System.out.println("o total de contas ï¿½ " + Conta.total);
 		 
 		 this.agencia = agencia;
 		 this.numero  = numero;		 
@@ -97,14 +97,30 @@ public abstract class Conta {
 	}
     
     public static int getTotal() {           //colocado static para poder pegar o metodo pela classe
-		//System.out.println(this.saldo);    // não existe this em um metodo estatico
+		//System.out.println(this.saldo);    // nï¿½o existe this em um metodo estatico
     	
     	return Conta.total;
 	}
     
+    @Override
+    public boolean equals(Object ref) {
+    	
+    	Conta outra = (Conta)ref;
+    	
+    	if(this.agencia != outra.agencia) {
+    		return false;
+    	}
+    	
+    	if(this.numero != outra.numero) {
+    		return false;
+    	}   
+    	
+    	return true;
+    }
+    
 	@Override
 	public String toString() {
-		return "Número: " + this.getNumero() + " Agenica: " + this.getAgencia();
+		return "NÃºmero: " + this.getNumero() + " Agencia: " + this.getAgencia();
 	}
 	   
     
