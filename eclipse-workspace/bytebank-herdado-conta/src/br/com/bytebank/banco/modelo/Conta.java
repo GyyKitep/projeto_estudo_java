@@ -6,7 +6,7 @@ package br.com.bytebank.banco.modelo;            //se ele estiver dentro de um d
  * @author Geovanny
  *
  */
-public abstract class Conta { 
+public abstract class Conta  implements Comparable<Conta>{ 
 	 protected double saldo;		      // private proibe que outras classes possam mexer e ler ela, apenas esta classe pode mexer nela
 	 private int agencia;                    // atributos
 	 private int numero;               // o atributo pode ser imutavel, ter um valor constante
@@ -116,6 +116,13 @@ public abstract class Conta {
     	}   
     	
     	return true;
+    }
+    
+    @Override
+    public int compareTo(Conta outra) {
+    
+    	return Double.compare(this.saldo, outra.getSaldo());
+    	
     }
     
 	@Override
