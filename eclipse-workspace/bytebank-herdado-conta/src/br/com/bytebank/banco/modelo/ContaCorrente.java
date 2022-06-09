@@ -1,10 +1,11 @@
 package br.com.bytebank.banco.modelo;            //se ele estiver dentro de um diretorio precisa colocar aqui o diretorio
 
+import java.io.Serializable;
 
-public class ContaCorrente extends Conta implements Tributavel{ // herença não erda os contrutores
+public class ContaCorrente extends Conta implements Tributavel{ // herenï¿½a nï¿½o erda os contrutores
 
 	public ContaCorrente(int agencia, int numero) {    // se tirar o public apenas a esta classe pode usar
-		super(agencia, numero); //chamada do construtor da classe mãe 
+		super(agencia, numero); //chamada do construtor da classe mï¿½e 
 		
 	}
 	

@@ -1,13 +1,15 @@
 package br.com.bytebank.banco.modelo;            //se ele estiver dentro de um diretorio precisa colocar aqui o diretorio
 
+import java.io.Serializable;
+
 /**
  * Classe que representa um cliente no bytebank.
  * 
- * @author Nico Steppat Geovanny
+ * @author Geovanny
  * @version 0.1
  */
 
-public class Cliente {
+public class Cliente{
 
 	private String nome;
 	private String cpf;

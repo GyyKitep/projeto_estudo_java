@@ -1,0 +1,3 @@
+Teste de write no arquivo lorem2
+
+Teste de write 2 no arquivo lorem2
