@@ -37,7 +37,6 @@ public class Datas {
 	    
 	    LocalTime intervalo = LocalTime.of(15, 30);
 	    System.out.println(intervalo);
-	    
-	    intervalo.is
+	  
 	}
 }
