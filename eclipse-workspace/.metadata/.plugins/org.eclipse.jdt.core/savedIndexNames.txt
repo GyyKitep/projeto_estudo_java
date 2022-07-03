@@ -1,10 +1,2 @@
 INDEX VERSION 1.131+C:\Users\geova\Documents\Projetos\Projetos_Aulas\JAVA\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-2970589190.index
-1175108056.index
-1173209934.index
-1030451079.index
-1509799344.index
-2993747322.index
-3089736808.index
-1284192541.index
