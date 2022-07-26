@@ -1,4 +1,4 @@
-<%@page import="br.com.gerenciador.servlet.Empresa"%>
+<%@page import="br.com.gerenciador.modelo.Empresa"%>
 <%@page import="java.util.List"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -11,8 +11,17 @@
 <meta charset="UTF-8">
 <title>Java Standar Taglib</title>
 </head>
-<body>
-	Lista de empresas: <br> </br>
+<body>	
+	
+	<c:import url="logout-parcial.jsp"></c:import>
+		
+	Usuario Logado: ${ usuarioLogado }
+	
+	<br>
+	<br>
+	<br>
+	
+	Lista de empresas: <br>
 	
 	<c:if test="${not empty empresa }">
 		Empresa ${ empresa } Cadastrada com sucesso
@@ -24,8 +33,8 @@
 		
 			<li>	
 				${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>
-				<a href="/gerenciador/mostraEmpresa?id=${empresa.id}">editar</a>
-				<a href="/gerenciador/removeEmpresa?id=${empresa.id}">remove</a>
+				<a href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id}">editar</a>
+				<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">remove</a>
 			</li>
 			
 			
