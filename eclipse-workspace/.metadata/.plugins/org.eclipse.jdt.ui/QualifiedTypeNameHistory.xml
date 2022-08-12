@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeAll"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterAll"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
-    <fullyQualifiedTypeName name="java.lang.Thread.State"/>
-    <fullyQualifiedTypeName name="br.com.loja.imposto.CalculadoraDeImpostos"/>
-    <fullyQualifiedTypeName name="br.com.loja.imposto.TipoImposto"/>
-    <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="br.com.loja.imposto.ISS"/>
-    <fullyQualifiedTypeName name="br.com.loja.imposto.ICMS"/>
-    <fullyQualifiedTypeName name="br.com.loja.desconto.CalculadoraDeDescontos"/>
-    <fullyQualifiedTypeName name="br.com.loja.desconto.Desconto"/>
-    <fullyQualifiedTypeName name="br.com.loja.desconto.DescontoParaOrcamentoComMaisDeCincoItens"/>
-    <fullyQualifiedTypeName name="br.com.loja.desconto.DescontoParaOrcamentoComValorMaiorQueQuinhentos"/>
-    <fullyQualifiedTypeName name="br.com.loja.desconto.SemDesconto"/>
-    <fullyQualifiedTypeName name="java.lang.Boolean"/>
-    <fullyQualifiedTypeName name="br.com.loja.DomainExcepction"/>
     <fullyQualifiedTypeName name="br.com.loja.orcamento.situacao.SituacaoOrcamento"/>
     <fullyQualifiedTypeName name="br.com.loja.orcamento.situacao.Finalizado"/>
     <fullyQualifiedTypeName name="br.com.loja.orcamento.situacao.EmAnalise"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
-    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
     <fullyQualifiedTypeName name="br.com.loja.pedido.GeraPedido"/>
     <fullyQualifiedTypeName name="br.com.loja.orcamento.Orcamento"/>
     <fullyQualifiedTypeName name="java.util.logging.Handler"/>
@@ -49,7 +29,6 @@
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="br.com.jdbc.PersistenciaProduto"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="br.com.jdbc.ConnectionFactory"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.mchange.v2.sql.filter.SynchronizedFilterDataSource"/>
@@ -60,4 +39,25 @@
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="br.com.alura.jdbc.factory.ConnectionFactory"/>
     <fullyQualifiedTypeName name="com.mchange.lang.PotentiallySecondaryRuntimeException"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
+    <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
+    <fullyQualifiedTypeName name="br.com.loja.util.JPAUtil"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="javax.persistence.EnumType"/>
+    <fullyQualifiedTypeName name="javax.persistence.Enumerated"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.ForeignKey"/>
+    <fullyQualifiedTypeName name="javax.persistence.ForeignKey"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="br.com.loja.modelo.Categoria"/>
+    <fullyQualifiedTypeName name="br.com.loja.dao.ProdutoDao"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 </qualifiedTypeNameHistroy>
