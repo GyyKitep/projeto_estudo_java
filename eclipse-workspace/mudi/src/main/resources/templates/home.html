@@ -4,22 +4,10 @@
 	<div th:replace="~{base :: logo}"></div>
 
 	<div class="container">
-		<div th:replace="~{base :: titulo('Meus Pedidos')}"></div>
-		<nav class="navbar navbar-expand navbar-light d-flex justify-content-between mb-3" style="background-color: #dcdcdc;">
-		    <div class="navbar-nav">
-				<a th:classappend="${status} == null ? 'active' " class="nav-item nav-link" href="/home">Todos</a>
-				<a th:classappend="${status} == 'aguardando' ? 'active' " class="nav-item nav-link" href="/home/aguardando">Aguardando</a>
-				<a th:classappend="${status} == 'aprovado' ? 'active' "  class="nav-item nav-link" href="/home/aprovado">Aprovado</a>
-				<a th:classappend="${status} == 'entregue' ? 'active' "  class="nav-item nav-link" href="/home/entregue">Entregue</a>
-			</div>
-			<a href="/pedido/formulario"><button class="btn btn-outline-secondary my-1 my-sm-0">Novo</button></a>
-		</nav>
+		<div th:replace="~{base :: titulo('Meus Entregues')}"></div>
 		<div class="card mt-3" th:each="pedido: ${pedidos}">
 			<th:block th:switch="${pedido.status.name()}">
-				<div th:case="AGUARDANDO" class="card-header" th:text="${pedido.nomeProduto}" style="background-color: #ffdb58;">Nome do produto</div>
-		        <div th:case="APROVADO" class="card-header" th:text="${pedido.nomeProduto}" style="background-color: #6eaa5e;">Nome do produto</div>	
-			    <div th:case="ENTREGUE" class="card-header" th:text="${pedido.nomeProduto}" style="background-color: #8a8a8a;">Nome do produto</div>
-			</th:block>
+			<div th:case="ENTREGUE" class="card-header" th:text="${pedido.nomeProduto}" style="background-color: #8a8a8a;">Nome do produto</div>
 			<div class="cad-body">	
 					<div class="row">
 						<div class="col-12 col-sm-8  mb-3">

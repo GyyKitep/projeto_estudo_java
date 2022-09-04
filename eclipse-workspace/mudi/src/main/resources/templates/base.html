@@ -25,10 +25,28 @@
 
 </head>
 
-<div th:fragment="logo"
-	class="logo-container mb-3 p-3 d-flex justify-content-between ">
-	<a href="/home" style="color: inherit; text-decoration: none"><span class="logo">mudi</span></a>
-	<span class="mt-3">login</span>
+<div th:fragment="logo" class="">
+	<div class="logo-container mb-3 p-3 d-flex justify-content-between ">
+
+		<span class="logo ml-2">mudi</span>
+		<span class="mt-3 mr-2">	    
+			<a href="/login" sec:authorize="!isAuthenticated()" style="color: inherit; text-decoration: none">login</span></a>  
+			<a onclick="document.querySelector('#form-login').submit()" href="#" sec:authorize="isAuthenticated()" style="color: inherit; text-decoration: none">logout</span></a>
+		    
+		    <form id="form-login" th:action="@{/logout}" method="post" style="display: none;"></form> 
+		</span>
+	</div>
+	<div class="mb-2 " sec:authorize="isAuthenticated()">
+		<div clas="col">
+			<nav class="nav">
+				<a class="nav-link " th:href="@{/home}"> Home</a>
+				<a class="nav-link " th:href="@{/usuario/pedidos}"> Meus Pedidos</a>
+				<a class="nav-link " th:href="@{/oferta}"> Faça sua oferta</a>	
+			</nav>
+		</div>
+	
+	</div>
+	
 </div>
 
 <div th:fragment="titulo(valor)"
