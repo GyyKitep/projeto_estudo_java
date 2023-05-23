@@ -16,12 +16,6 @@
 			<item value="Id"/>
 			<item value="user"/>
 			<item value="User"/>
-			<item value="action"/>
-			<item value="itens"/>
-			<item value="Itens"/>
-			<item value="Saca"/>
-			<item value="deposita"/>
-			<item value="agencia"/>
 		</list>
 		<list key="replacehistory">
 		</list>
