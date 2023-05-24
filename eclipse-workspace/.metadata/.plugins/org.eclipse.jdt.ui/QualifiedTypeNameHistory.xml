@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContext"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
-    <fullyQualifiedTypeName name="org.springframework.security.authentication.UsernamePasswordAuthenticationToken"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"/>
     <fullyQualifiedTypeName name="med.vol.api.infra.security.SecurityFilter"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
@@ -46,7 +42,6 @@
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
     <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.ProducerConfig"/>
-    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
     <fullyQualifiedTypeName name="br.com.ecommerce.KafkaService"/>
     <fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.ConsumerRecord"/>
     <fullyQualifiedTypeName name="org.apache.kafka.clients.consumer.KafkaConsumer"/>
@@ -60,4 +55,9 @@
     <fullyQualifiedTypeName name="org.apache.kafka.clients.producer.KafkaProducer"/>
     <fullyQualifiedTypeName name="br.com.ecommerce.KafkaDispatcher"/>
     <fullyQualifiedTypeName name="java.io.Closeable"/>
+    <fullyQualifiedTypeName name="br.com.ecommerce.Order"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.common.serialization.Serializer"/>
+    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 </qualifiedTypeNameHistroy>
