@@ -13,6 +13,10 @@ public class Order {
 		this.amount = amount;
 		this.email = email;
 	}
+
+	public String getOrderId() {
+		return this.orderId;
+	}
 	
 	
 

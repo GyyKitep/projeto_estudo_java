@@ -13,6 +13,9 @@ import javax.management.RuntimeErrorException;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
+import br.com.ecommerce.consumer.KafkaService;
+import br.com.ecommerce.dispatcher.KafkaDispatcher;
+
 public class BatchSendMessageService {
 
 	private final Connection connection;

@@ -1,9 +1,12 @@
-package br.com.ecommerce;
+package br.com.ecommerce.dispatcher;
 
 import org.apache.kafka.common.serialization.Serializer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import br.com.ecommerce.Message;
+import br.com.ecommerce.MessageAdapter;
 
 public class GsonSerializer<T> implements Serializer<T>{
 	

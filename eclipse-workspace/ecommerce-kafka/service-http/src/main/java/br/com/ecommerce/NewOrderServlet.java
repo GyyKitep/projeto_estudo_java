@@ -2,7 +2,7 @@ package br.com.ecommerce;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.UUID;
+import java.sql.SQLException;
 import java.util.concurrent.ExecutionException;
 
 import javax.servlet.ServletException;
@@ -10,17 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.ecommerce.dispatcher.KafkaDispatcher;
+
 public class NewOrderServlet extends HttpServlet {
 
 	private final KafkaDispatcher<Order> orderDispatcher = new KafkaDispatcher<>();
-	private final KafkaDispatcher<Email> emailDispatcher = new KafkaDispatcher<>();
 
 	@Override
 	public void destroy() {
 		super.destroy();
 		try {
 			orderDispatcher.close();
-			emailDispatcher.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,26 +33,32 @@ public class NewOrderServlet extends HttpServlet {
 
 			// we are not caring about any security issues, we are only
 			// showing how to use http as a starting point
-			var orderId = UUID.randomUUID().toString();
+			var orderId = req.getParameter("uuid");
 			var amount = new BigDecimal(req.getParameter("amount"));
 			var email = req.getParameter("email");
 
 			var order = new Order(orderId, amount, email);
 
-			orderDispatcher.send("ECOMMERCE_NEW_ORDER", email, new CorrelationId(NewOrderServlet.class.getSimpleName()), order);
+			try (var database = new OrdersDatabase()) {
+				if (database.saveNew(order)) {
+					orderDispatcher.send("ECOMMERCE_NEW_ORDER", email,
+							new CorrelationId(NewOrderServlet.class.getSimpleName()), order);
 
-			var emailCode = new Email("email_subject", "email_body");
-			emailDispatcher.send("ECOMMERCE_SEND_EMAIL", email, new CorrelationId(NewOrderServlet.class.getSimpleName()), emailCode);
+					System.out.println("New order sent successfully");
+					resp.setStatus(HttpServletResponse.SC_OK);
+					resp.getWriter().print("New order sent");
 
-			System.out.println("New order sent successfully");
+				} else {
+					System.out.println("Older order sent received");
+					resp.setStatus(HttpServletResponse.SC_OK);
+					resp.getWriter().print("Older order received");
 
-			resp.setStatus(HttpServletResponse.SC_OK);
-			resp.getWriter().print("New order sent");
+				}
+			}
 
-		} catch (InterruptedException e) {
-			throw new ServletException(e);
-		} catch (ExecutionException e) {
-			throw new ServletException(e);
+		} catch (ExecutionException | InterruptedException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	};
 

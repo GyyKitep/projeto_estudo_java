@@ -5,24 +5,25 @@ import java.math.BigDecimal;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
+import br.com.ecommerce.dispatcher.KafkaDispatcher;
+
 public class NewOrderMain {
 
 	public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
 
 		try (var orderDispatcher = new KafkaDispatcher<Order>()) {
-			try (var emailDispatcher = new KafkaDispatcher<Email>()) {
-				var orderId = UUID.randomUUID().toString();
-				var amount = new BigDecimal(Math.random() * 5000 + 1);
-				var email = Math.random() + "@email.com";
+			var orderId = UUID.randomUUID().toString();
+			var amount = new BigDecimal(Math.random() * 5000 + 1);
+			var email = Math.random() + "@email.com";
 
-				var order = new Order( orderId, amount, email);
+			var order = new Order(orderId, amount, email);
 
-				orderDispatcher.send("ECOMMERCE_NEW_ORDER", email, new CorrelationId(NewOrderMain.class.getSimpleName()), order);
+			var id = new CorrelationId(NewOrderMain.class.getSimpleName());
 
-				var emailCode = new Email("email_subject", "email_body");
-				emailDispatcher.send("ECOMMERCE_SEND_EMAIL", email, new CorrelationId(NewOrderMain.class.getSimpleName()), emailCode);
-			}
-		};
+			orderDispatcher.send("ECOMMERCE_NEW_ORDER", email, id, order);
+
+		}
+		;
 
 	}
 

@@ -1,4 +1,4 @@
-package br.com.ecommerce;
+package br.com.ecommerce.consumer;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -13,6 +13,10 @@ import java.util.regex.Pattern;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
+
+import br.com.ecommerce.Message;
+import br.com.ecommerce.dispatcher.GsonSerializer;
+import br.com.ecommerce.dispatcher.KafkaDispatcher;
 
 public class KafkaService<T> implements Closeable {
 
@@ -66,6 +70,7 @@ public class KafkaService<T> implements Closeable {
 		properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
 		properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, GsonDeserializer.class.getName());
 		properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
+		properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
 		properties.putAll(overrideProperties);
 
 		// grupos diferentes fazem eles recebera a msm mensagem, caso possuir o msm

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.ecommerce.dispatcher.KafkaDispatcher;
+
 public class GenerateAllReportsServlet extends HttpServlet {
 
 	private final KafkaDispatcher<String> batchDispatcher = new KafkaDispatcher<>();
